@@ -17,9 +17,18 @@ int Encrypt::gcd(int a, int b){
 	//ive seen several different versions of this
 	//code online but we are not getting the correct
 	//private key from it
-	if (b == 0)
+	//Commented out faulty gcd method
+	/*if (b == 0)
 		return a;
-	return gcd(b, a % b);
+	return gcd(b, a % b);*/
+	
+	//This is a new gcd method that is being tested
+	while(a != b){
+		if(a > b) return gcd(a-b,b);
+		
+		return gdb(a, b-a);
+	}
+	return a;
 }
 
 void Encrypt::read(string fileName) {
